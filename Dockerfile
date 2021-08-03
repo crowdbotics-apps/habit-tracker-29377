@@ -17,9 +17,12 @@ ARG REACT_APP_GOOGLE_CLIENT_ID
 
 
 RUN apt-get update
-# Requirements for nodejs and npm
-RUN apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+Requirements for nodejs and npm
+Install Node.js
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
 
 
 # libpq-dev and python3-dev help with psycopg2
