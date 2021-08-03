@@ -17,8 +17,7 @@ ARG REACT_APP_GOOGLE_CLIENT_ID
 
 
 RUN apt-get update
-Requirements for nodejs and npm
-Install Node.js
+# Install Node.js
 RUN apt-get install --yes curl
 RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install --yes nodejs
