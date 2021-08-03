@@ -21,6 +21,36 @@ class User(AbstractUser):
     # First Name and Last Name do not cover name patterns
     # around the globe.
     name = models.CharField(_("Name of User"), blank=True, null=True, max_length=255)
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    is_coach = models.BooleanField(default=False)
+    profile_picture = models.ImageField(blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+    
+
+    def get_settings(self):
+        try:
+            settings = self.settings
+        except User.settings.RelatedObjectDoesNotExist:
+            settings = Settings.objects.create(user=self)
+        return settings
+        
+
+class Coaching(models.Model):
+    coach = models.ForeignKey('User', related_name='assignee', on_delete=models.CASCADE)
+    user = models.ForeignKey('User', related_name='coaches', on_delete=models.CASCADE)
+
+
+class Settings(models.Model):
+    NOTIFICATION_FREQUENCY = (
+        ('daily', 'Daily'),
+        ('weekly', 'Weekly'),
+        ('monthly', 'Monthly')
+    )
+    DISPLAY_VALUES = (
+        ('graph_only', 'Graph Only'),
+    )
+    user = models.OneToOneField(User, related_name='settings', on_delete=models.CASCADE)
+    notifications = models.CharField(choices=NOTIFICATION_FREQUENCY, max_length=50, default=NOTIFICATION_FREQUENCY[0][0])
+    display_values = models.CharField(choices=DISPLAY_VALUES, max_length=50, default=DISPLAY_VALUES[0][0])

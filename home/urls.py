@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import re_path
 from .views import home
 
 urlpatterns = [
-    path("", home, name="home"),
+    re_path(r"^.*?$", home, name="home"),
 ]

@@ -1,9 +1,7 @@
 from typing import Any, Sequence
 
 from django.contrib.auth import get_user_model
-from factory import Faker, post_generation
-from factory.django import DjangoModelFactory
-
+from factory import DjangoModelFactory, Faker, post_generation
 
 
 class UserFactory(DjangoModelFactory):
