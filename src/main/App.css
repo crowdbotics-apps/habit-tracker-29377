@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../assets/fonts/Roboto/Roboto-Bold.ttf');
+}
+
+.modal-dialog {
+  max-width: 600px !important;
+}
+@media all and (min-width: 768px) {
+  .modal-open .modal-backdrop {
+    background-color: transparent;
+  }
+}
+
+/* FIREFOX FIX OF SELECT BOXES */
+@supports (-moz-appearance: none) {
+  select {
+    -moz-appearance: none !important;
+    background: transparent
+      url('data:image/gif;base64,R0lGODlhBgAGAKEDAFVVVX9/f9TU1CgmNyH5BAEKAAMALAAAAAAGAAYAAAIODA4hCDKWxlhNvmCnGwUAOw==')
+      right center no-repeat !important;
+    background-position: calc(100% - 5px) center !important;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: rgb(206, 204, 204);
+} */
+
+.DayPicker {
+  border: 1px solid #e3e5e9;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 20px rgba(27, 42, 61, 0.04);
+  border-radius: 4px;
+  background-color: white;
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.DayPicker-Caption {
+  text-align: center !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+
+.DayPicker-NavButton--prev {
+  left: 20px !important;
+  background-image: url('../assets/images/LeftCalendarIcon.svg') !important;
+}
+
+.DayPicker-NavButton--next {
+  background-image: url('../assets/images/RightCalendarIcon.svg') !important;
+}
+
+.DayPicker-Weekday {
+  font-size: 12px !important;
+  line-height: 16px !important;
+  color: #b7babb !important;
+  text-align: center;
+}
+
+.DayPicker-Day {
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #1b2a3d !important;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.DayPicker-Day:hover {
+  background: #e9e9e9 !important;
+}
+
+.DayPicker-Day--disabled {
+  color: #8e97a3 !important;
+}
+
+.DayPicker-Day--outside {
+  color: #e3e5e9 !important;
+}
+
+.DayPicker-wrapper {
+  outline: none;
+}
+
+.DayPicker-Caption {
+  font-size: 20px;
+  line-height: 23px;
+  color: #1b2a3d;
+}
+
+.DayPicker-WeekNumber {
+  outline: none;
+}
+
+.DayPicker-Month {
+  border-spacing: 8px !important;
+  border-collapse: separate !important;
+}
+
+.DayPicker-Day--today,
+.DayPicker-Day--selected,
+.DayPicker-Day--today:hover {
+  background-color: #1b2a3d !important;
+  color: white !important;
+}
+
+.DayPicker-Day--selectedRange {
+  background-color: #1b2a3d !important;
+  color: white !important;
+}
+
+.DayPicker-Day--hoverRange,
+.DayPicker-Day--selectedRange:hover {
+  background: #e9e9e9 !important;
+  color: #274f66 !important;
+}
+.DayPicker-Day--hoverRange:hover {
+  border-radius: 0 !important;
+}
+
+.form-control {
+  border: 1px solid #e3e5e9 !important;
+  color: #1b2a3d !important;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.form-select {
+  height: 36px !important;
+}
+.textarea {
+  height: auto !important;
+}
+.input-text-label {
+  font-family: Roboto;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #1b2a3d !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8e97a3 !important;
+  opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8e97a3;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  color: #8e97a3;
+}
